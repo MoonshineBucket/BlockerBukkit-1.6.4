@@ -25,15 +25,15 @@ public class BlockerExecutor implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if(sender.hasPermission("blocker.own")) {
 			if(args.length == 0) {
-				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9/blocker reload&7: &3Перезагрузить конфигурации.."));
-				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9/blocker <add/remove>&7: &3Добавить/Удалить запрещенный предмет.."));
+				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9/blocker reload&7: &3РџРµСЂРµР·Р°РіСЂСѓР·РёС‚СЊ РєРѕРЅС„РёРіСѓСЂР°С†РёРё.."));
+				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9/blocker <add/remove>&7: &3Р”РѕР±Р°РІРёС‚СЊ/РЈРґР°Р»РёС‚СЊ Р·Р°РїСЂРµС‰РµРЅРЅС‹Р№ РїСЂРµРґРјРµС‚.."));
 			} else {
 				if(args[0].contains("reload")) {
 					this.getPlugin().reloadConfig();
 					this.getPlugin().saveConfig();
 					this.getPlugin().load();
 					
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&2Конфигурации перезагружены.."));
+					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&2РљРѕРЅС„РёРіСѓСЂР°С†РёРё РїРµСЂРµР·Р°РіСЂСѓР¶РµРЅС‹.."));
 				}
 				
 				if((args[0].contains("add") || args[0].contains("remove")) && (sender instanceof Player)) {
@@ -51,7 +51,7 @@ public class BlockerExecutor implements CommandExecutor {
 						break;
 					}
 				} else {
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cОшибка&7: &cДанная команда не может быть выполнена в терминале!"));
+					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cРћС€РёР±РєР°&7: &cР”Р°РЅРЅР°СЏ РєРѕРјР°РЅРґР° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РІС‹РїРѕР»РЅРµРЅР° РІ С‚РµСЂРјРёРЅР°Р»Рµ!"));
 				}
 			}
 		}
@@ -73,7 +73,7 @@ public class BlockerExecutor implements CommandExecutor {
 		list.add(String.valueOf(itemId));
 		config.set("banned", list);
 		this.getPlugin().saveConfig();
-		player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&3Предмет успешно заблокирован!"));
+		player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&3РџСЂРµРґРјРµС‚ СѓСЃРїРµС€РЅРѕ Р·Р°Р±Р»РѕРєРёСЂРѕРІР°РЅ!"));
 	}
 	
 	public void removeItem(FileConfiguration config, List<String> list, Player player) {
@@ -90,7 +90,7 @@ public class BlockerExecutor implements CommandExecutor {
 		list.remove(String.valueOf(itemId));
 		config.set("banned", list);
 		this.getPlugin().saveConfig();
-		player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&3Предмет успешно разблокирован!"));
+		player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&3РџСЂРµРґРјРµС‚ СѓСЃРїРµС€РЅРѕ СЂР°Р·Р±Р»РѕРєРёСЂРѕРІР°РЅ!"));
 	}
 
 }
