@@ -1,0 +1,14 @@
+main: com.github.dreamsmoke.blocker.BlockerBukkit
+name: BlockerBukkit
+version: 1.0
+database: false
+author: DreamSmoke
+website: https://vk.com/id174171856
+description: Запрет предметов на вашем сервере.
+softdepend:
+  - CraftBukkit
+
+commands:
+    blocker:
+        description: Primary command for the BlockerBukkit plugin.
+        aliases: [block]
