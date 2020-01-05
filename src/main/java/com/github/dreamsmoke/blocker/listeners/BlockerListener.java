@@ -213,7 +213,7 @@ public class BlockerListener implements Listener {
 			inventory.setItem(slot, (new ItemStack(Material.AIR)));
 		}
 		
-		player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cОшибка&7: &cДанный предмет запрещен в использовании.."));
+		player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cРћС€РёР±РєР°&7: &cР”Р°РЅРЅС‹Р№ РїСЂРµРґРјРµС‚ Р·Р°РїСЂРµС‰РµРЅ РІ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРё.."));
 		player.updateInventory();
 	}
 
